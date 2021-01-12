@@ -6,8 +6,8 @@ import logging
 import os
 
 INTERVAL_MIN_TIME = 60
-CHAT_ID = os.environ["chat_id"]
-TELEGRAM_BOT_TOKEN = os.environ["telegram_bot_tokrn"]
+CHAT_ID = os.environ["CHAT_ID"]
+TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 
 def wait(min) :
     now = datetime.datetime.now()
