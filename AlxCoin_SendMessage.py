@@ -62,7 +62,7 @@ def main() :
 
             opening_price = candleData['opening_price']
             trade_price = candleData['trade_price']
-            change_price = opening_price - trade_price
+            change_price = trade_price - opening_price
             if float(change_price) > 0.00 :
                 change_price_ratio = format( (change_price / opening_price) * 100.0, '.2f')
 
