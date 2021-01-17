@@ -68,7 +68,7 @@ def main() :
 
             if float(vol_ratio) >= float(CHECK_VOLUMN_RATIO) and float(change_price_ratio) >= float(CHECK_CHANGE_PRICE_RATIO) :
                 text = '({})\n'.format(datetime.datetime.now().strftime('%m/%d %H:%M:%S'))
-                text += '[{}] {}% \n -거래량: {}/ 평균: {}/ 비율: {}\n -거래대금: {}/ 평균: {}\n -시가: {}/ 종가: {}/ 변동액: {}\n'.format(
+                text += '[{}] {}% \n -거래량: {}/ 평균: {}/ 비율: {}%\n -거래대금: {}/ 7일평균: {}\n -시가: {}/ 종가: {}/ 변동액: {}\n'.format(
                     i, change_price_ratio,
                     format(vol, '.2f'), format(vol_7d_avg, '.2f'), vol_ratio,
                     format(int(pri), ','), format(int(pri_7d_avg), ','),
