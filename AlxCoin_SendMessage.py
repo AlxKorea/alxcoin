@@ -63,12 +63,11 @@ def main() :
             opening_price = candleData['opening_price']
             trade_price = candleData['trade_price']
             change_price = trade_price - opening_price
-            if float(change_price) > 0.00 :
-                change_price_ratio = format( (change_price / opening_price) * 100.0, '.2f')
+            change_price_ratio = format( (change_price / opening_price) * 100.0, '.2f')
 
             #if float(vol_ratio) >= float(CHECK_VOLUMN_RATIO) and float(change_price_ratio) >= float(CHECK_CHANGE_PRICE_RATIO) :
             if float(change_price_ratio) >= float(CHECK_CHANGE_PRICE_RATIO) :
-                text = '({})\n'.format(datetime.datetime.now().strftime('%m/%d %H:%M:%S'))
+                text = '({}) - '.format(datetime.datetime.now().strftime('%m/%d %H:%M:%S'))
                 text += '[{}] 상승률({}%) \n -거래량: {}/ 평균: {}/ 비율: {}%\n -거래대금: {}/ 7일평균: {}\n -시가: {}/ 종가: {}/ 변동액: {}\n'.format(
                     i, change_price_ratio,
                     format(vol, '.2f'), format(vol_7d_avg, '.2f'), vol_ratio,
