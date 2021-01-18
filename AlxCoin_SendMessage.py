@@ -5,7 +5,7 @@ import datetime
 import logging
 import os
 
-INTERVAL_MIN_TIME = 1
+INTERVAL_MIN_TIME = 5
 CHECK_VOLUMN_RATIO = 150.0
 CHECK_CHANGE_PRICE_RATIO = 0.50
 
