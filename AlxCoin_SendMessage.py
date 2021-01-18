@@ -7,7 +7,7 @@ import os
 
 INTERVAL_MIN_TIME = 1
 CHECK_VOLUMN_RATIO = 150.0
-CHECK_CHANGE_PRICE_RATIO = 2.0
+CHECK_CHANGE_PRICE_RATIO = 0.50
 
 CHAT_ID = os.environ["CHAT_ID"]
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
@@ -66,7 +66,8 @@ def main() :
             if float(change_price) > 0.00 :
                 change_price_ratio = format( (change_price / opening_price) * 100.0, '.2f')
 
-            if float(vol_ratio) >= float(CHECK_VOLUMN_RATIO) and float(change_price_ratio) >= float(CHECK_CHANGE_PRICE_RATIO) :
+            #if float(vol_ratio) >= float(CHECK_VOLUMN_RATIO) and float(change_price_ratio) >= float(CHECK_CHANGE_PRICE_RATIO) :
+            if float(change_price_ratio) >= float(CHECK_CHANGE_PRICE_RATIO) :
                 text = '({})\n'.format(datetime.datetime.now().strftime('%m/%d %H:%M:%S'))
                 text += '[{}] 상승률({}%) \n -거래량: {}/ 평균: {}/ 비율: {}%\n -거래대금: {}/ 7일평균: {}\n -시가: {}/ 종가: {}/ 변동액: {}\n'.format(
                     i, change_price_ratio,
