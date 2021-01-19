@@ -48,7 +48,7 @@ def main() :
 
     while True :
         for i in krw_markets :
-            candleData = upbit.get_minutes_candles(1, i, count=1)[0]
+            candleData = upbit.get_minutes_candles(INTERVAL_MIN_TIME, i, count=1)[0]
 
             vol = candleData['candle_acc_trade_volume']
             vol_7d = candles_7d[i]['candle_acc_trade_volume']
