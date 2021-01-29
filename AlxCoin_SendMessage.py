@@ -22,7 +22,7 @@ def main() :
     upbit = Upbitpy()
     updater = Updater(TELEGRAM_BOT_TOKEN)
 
-    MY_MARKETS = json.loads(MY_MARKETS)
+    MY_MARKETS = json.loads(MARKET_STR)
 
     while True :
         ticker = upbit.get_ticker(MY_MARKETS)
