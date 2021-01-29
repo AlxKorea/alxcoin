@@ -7,7 +7,8 @@ import os
 
 INTERVAL_MIN_TIME = 5
 
-MY_MARKETS = [os.environ["MY_MARKETS"]]
+MARKET_STR = os.environ["MY_MARKETS"]
+MY_MARKETS = [MARKET_STR]
 CHAT_ID = os.environ["CHAT_ID"]
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 
