@@ -4,11 +4,11 @@ import time
 import datetime
 import logging
 import os
+import json
 
 INTERVAL_MIN_TIME = 5
 
 MARKET_STR = os.environ["MY_MARKETS"]
-MY_MARKETS = [MARKET_STR]
 CHAT_ID = os.environ["CHAT_ID"]
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 
@@ -22,7 +22,7 @@ def main() :
     upbit = Upbitpy()
     updater = Updater(TELEGRAM_BOT_TOKEN)
 
-    print(MY_MARKETS)
+    MY_MARKETS = json.loads(MY_MARKETS)
 
     while True :
         ticker = upbit.get_ticker(MY_MARKETS)
