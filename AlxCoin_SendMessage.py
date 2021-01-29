@@ -4,11 +4,11 @@ import time
 import datetime
 import logging
 import os
-import json
+import ast
 
 INTERVAL_MIN_TIME = 5
 
-MY_MARKETS = json.loads(os.environ["MY_MARKETS"])
+MY_MARKETS = ast.literal_eval(os.environ["MY_MARKETS"])
 CHAT_ID = os.environ["CHAT_ID"]
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 
