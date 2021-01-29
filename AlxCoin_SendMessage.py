@@ -6,7 +6,7 @@ import logging
 import os
 import ast
 
-INTERVAL_MIN_TIME = 5
+INTERVAL_MIN_TIME = 30
 
 MY_MARKETS = ast.literal_eval(os.environ["MY_MARKETS"])
 CHAT_ID = os.environ["CHAT_ID"]
@@ -22,7 +22,7 @@ def main() :
     upbit = Upbitpy()
     updater = Updater(TELEGRAM_BOT_TOKEN)
 
-    print(MY_MARKETS)
+    #print(MY_MARKETS)
 
     while True :
         ticker = upbit.get_ticker(MY_MARKETS)
@@ -30,14 +30,15 @@ def main() :
         sendMessage = '({}) \n'.format(datetime.datetime.now().strftime('%m/%d %H:%M:%S'))
         
         for market_list in ticker :
+
             market_name = market_list['market']
 
             if market_list['market'].startswith('KRW') :
                 trade_price = format(float(market_list['trade_price']), ',.2f')
                 closing_price = format(float(market_list['prev_closing_price']), ',.2f')
             elif market_list['market'].startswith('BTC') :
-                trade_price = format(float(market_list['trade_price']), ',.8f') + ' BTC'
-                closing_price = format(float(market_list['prev_closing_price']), ',.8f') + ' BTC'
+                trade_price = format(float(market_list['trade_price']) * 100000000, ',.0f') + ' BTC'
+                closing_price = format(float(market_list['prev_closing_price']) * 100000000, ',.0f') + ' BTC'
             else :
                 pass
 
