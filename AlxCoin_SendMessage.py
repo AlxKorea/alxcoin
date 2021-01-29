@@ -21,6 +21,8 @@ def main() :
     upbit = Upbitpy()
     updater = Updater(TELEGRAM_BOT_TOKEN)
 
+    print(MY_MARKETS)
+
     while True :
         ticker = upbit.get_ticker(MY_MARKETS)
 
