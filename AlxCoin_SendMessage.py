@@ -8,7 +8,7 @@ import json
 
 INTERVAL_MIN_TIME = 5
 
-MARKET_STR = os.environ["MY_MARKETS"]
+MY_MARKETS = json.loads(os.environ["MY_MARKETS"])
 CHAT_ID = os.environ["CHAT_ID"]
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 
@@ -21,8 +21,6 @@ def wait(min) :
 def main() :
     upbit = Upbitpy()
     updater = Updater(TELEGRAM_BOT_TOKEN)
-
-    MY_MARKETS = json.loads(MARKET_STR)
 
     while True :
         ticker = upbit.get_ticker(MY_MARKETS)
