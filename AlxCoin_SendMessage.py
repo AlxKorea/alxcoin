@@ -33,8 +33,8 @@ def main() :
                 trade_price = format(float(market_list['trade_price']), ',.2f')
                 closing_price = format(float(market_list['prev_closing_price']), ',.2f')
             elif market_list['market'].startswith('BTC') :
-                trade_price = format(float(market_list['trade_price']) * 100000000, ',.2f') + ' BTC'
-                closing_price = format(float(market_list['prev_closing_price']) * 100000000, ',.2f') + ' BTC'
+                trade_price = format(float(market_list['trade_price']), ',.8f') + ' BTC'
+                closing_price = format(float(market_list['prev_closing_price']), ',.8f') + ' BTC'
             else :
                 pass
 
