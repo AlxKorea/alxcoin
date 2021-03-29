@@ -89,7 +89,7 @@ def main() :
         if receiveTickerBody['price'] < MY_CHECK_ALERT and not check_alert_use :
             check_alert_use = True
 
-        if regular_interval >= 2 :
+        if regular_interval >= 60 :
             send_message_func()
             regular_interval = 0
 
