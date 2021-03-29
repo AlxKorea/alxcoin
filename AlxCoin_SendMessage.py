@@ -10,7 +10,7 @@ MY_ASSET = os.environ["GOPAX_MY_ASSET"]
 MyAsset = '/trading-pairs/'+ MY_ASSET + '/ticker'
 CHAT_ID = os.environ["CHAT_ID"]
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
-MY_CHECK_ALERT = os.environ["MY_CHECK_PRICE"]
+MY_CHECK_ALERT = os.environ["MY_CHECK_ALERT"]
 
 INTERVAL_MIN_TIME = 1
 
