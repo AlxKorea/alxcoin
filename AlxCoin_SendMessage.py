@@ -82,11 +82,11 @@ def main() :
         receiveTickerBody = receiveTicker['body']
         #print(receiveTickerBody)
 
-        if receiveTickerBody['price'] > MY_CHECK_ALERT and check_alert_use :
+        if receiveTickerBody['price'] > float(MY_CHECK_ALERT) and check_alert_use :
             send_message_func()
             check_alert_use = False
 
-        if receiveTickerBody['price'] < MY_CHECK_ALERT and not check_alert_use :
+        if receiveTickerBody['price'] < float(MY_CHECK_ALERT) and not check_alert_use :
             check_alert_use = True
 
         if regular_interval >= 60 :
